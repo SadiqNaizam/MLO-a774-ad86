@@ -4,71 +4,65 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 203 62% 13%; /* PRD: #0E2A38 (Page Background) */
+    --foreground: 0 0% 100%; /* PRD: #FFFFFF (Text on dark page background) */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%; /* PRD: #FFFFFF (Surface) */
+    --card-foreground: 210 14% 15%; /* PRD: #212529 (Primary Text on card) */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%; /* Assumed same as card */
+    --popover-foreground: 210 14% 15%; /* Assumed same as card-foreground */
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 180 100% 38%; /* PRD: #00C0C0 (Accent Blue) */
+    --primary-foreground: 0 0% 100%; /* PRD: #FFFFFF (Button Text on Accent Blue) */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 210 40% 96.1%; /* Kept existing light gray, PRD doesn't specify specific secondary bg */
+    --secondary-foreground: 210 14% 15%; /* PRD: #212529 (Primary Text for contrast) */
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 40% 96.1%; /* Kept existing light gray */
+    --muted-foreground: 220 8% 63%; /* PRD: #878A99 (Secondary Text) */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 210 40% 96.1%; /* Kept existing light gray, PRD AccentBlue mapped to primary */
+    --accent-foreground: 210 14% 15%; /* PRD: #212529 (Primary Text for contrast) */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 60.2%; /* Kept existing */
+    --destructive-foreground: 0 0% 100%; /* Kept existing, typically white text */
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 210 17% 88%; /* PRD: #D1D5DB */
+    --input: 210 17% 88%; /* PRD: #D1D5DB (Assumed same as border for inputs) */
+    --ring: 180 100% 38%; /* PRD: #00C0C0 (Accent Blue for focus ring) */
 
-    --radius: 0.5rem;
+    --radius: 0.5rem; /* PRD: rounded-lg (0.5rem), matches existing */
 
+    /* Sidebar variables - untouched as not in PRD */
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 222.2 84% 4.9%; /* Existing dark mode background */
+    --foreground: 210 40% 98%; /* Existing dark mode foreground */
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;  /* Existing dark mode card (same as background) */
+    --card-foreground: 210 40% 98%; /* Existing dark mode card foreground */
 
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 180 100% 38%; /* PRD: #00C0C0 (Accent Blue) */
+    --primary-foreground: 0 0% 100%; /* PRD: #FFFFFF (Text on Accent Blue) */
 
-    --secondary: 217.2 32.6% 17.5%;
+    --secondary: 217.2 32.6% 17.5%; /* Existing dark mode secondary */
     --secondary-foreground: 210 40% 98%;
 
     --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted-foreground: 215 20.2% 65.1%; /* Existing dark mode muted foreground (light gray) */
 
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
@@ -78,7 +72,9 @@
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --ring: 180 100% 38%; /* PRD: #00C0C0 (Accent Blue for focus ring) */
+
+    /* Sidebar variables - untouched as not in PRD */
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -97,5 +93,8 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: sans-serif; /* PRD: typography.primaryFont: Sans-serif */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
